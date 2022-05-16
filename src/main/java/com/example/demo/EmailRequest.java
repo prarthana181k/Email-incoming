@@ -8,9 +8,8 @@ public class EmailRequest {
 	private OffsetDateTime startDate;	
 	private OffsetDateTime endDate;	
 	private String destinationFolder;
-	private boolean isResponseRequired;
-	private boolean download;
-	private String downaloadPath;
+	private boolean isResponseRequired=true;
+	private boolean deleteMessages=false ;
 	
 	public String getUserId() {
 		return userId;
@@ -31,15 +30,15 @@ public class EmailRequest {
 	public boolean isResponseRequired() {
 		return isResponseRequired;
 	}
-	
-	public boolean Download() {
-		return download;
+
+	public boolean isDeleteMessages() {
+		return deleteMessages;
 	}
 
-	public String getDownaloadPath() {
-		return downaloadPath;
+	public EmailRequest deleteMessages(boolean deleteMessages) {
+		this.deleteMessages = deleteMessages;
+		return this;
 	}
-
 
 	public static EmailRequest newInstance() {
 		return new EmailRequest();
@@ -63,16 +62,6 @@ public class EmailRequest {
 	
 	public EmailRequest startDate(OffsetDateTime startDate) {
 		this.startDate = startDate;
-		return this;
-	}
-
-	public EmailRequest Download(boolean download) {
-		this.download = download;
-		return this;
-	}
-
-	public EmailRequest DownaloadPath(String downaloadPath) {
-		this.downaloadPath = downaloadPath;
 		return this;
 	}
 

@@ -1,0 +1,5 @@
+com\example\demo\EmailDemoApplication.class
+com\example\demo\EmailService2.class
+com\example\demo\Email.class
+com\example\demo\EmailRequest.class
+com\example\demo\Attachment.class
