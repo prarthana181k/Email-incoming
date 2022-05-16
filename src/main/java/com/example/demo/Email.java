@@ -1,27 +1,47 @@
 package com.example.demo;
 
+import java.io.InputStream;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.microsoft.graph.models.Attachment;
-import com.microsoft.graph.models.MimeContent;
+
 
 public class Email {
 	String senderEmailId;
 	String subject;
-	String date;
+	OffsetDateTime date;
 	List<Attachment> attachments =new ArrayList();
 	String content ;
-	public Email() {
-		super();
+	
+	public String getSenderEmailId() {
+		return senderEmailId;
 	}
-	public Email(String senderEmailId, String subject, String date, List<Attachment> attachments, String content) {
-		super();
+	public void setSenderEmailId(String senderEmailId) {
 		this.senderEmailId = senderEmailId;
+	}
+	public String getSubject() {
+		return subject;
+	}
+	public void setSubject(String subject) {
 		this.subject = subject;
+	}	
+	public OffsetDateTime getDate() {
+		return date;
+	}
+	public void setDate(OffsetDateTime date) {
 		this.date = date;
+	}
+	public List<Attachment> getAttachments() {
+		return attachments;
+	}
+	public void setAttachments(List<Attachment> attachments) {
 		this.attachments = attachments;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
 		this.content = content;
 	}
 	

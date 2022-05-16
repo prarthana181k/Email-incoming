@@ -40,7 +40,7 @@ public class EmailService {
     //Set the scopes for your ms-graph request
     private final static List<String> SCOPES = Arrays.asList("https://graph.microsoft.com/.default");
     
-	public static ZipOutputStream conhub (String userId,@Nullable String date) {
+	public static ZipOutputStream email (EmailRequest request) {
 		GraphServiceClient graphClient= getAuthorization();
 		MessageCollectionPage messages= getAttachment(graphClient,userId,date);
 		
@@ -90,6 +90,7 @@ public class EmailService {
 	}
 	
 	private static List<Email> processEmail(MessageCollectionPage messages, GraphServiceClient graphClient, String userId ) {
+		EmailRequest
 		List<Email> mailList= new ArrayList<>();
 		messages.getCurrentPage().forEach(msg->{
         Email email =new Email(msg.sender.emailAddress.address,msg.subject,msg.receivedDateTime.toString(),msg.attachments.getCurrentPage(),msg.body.content.toString());
