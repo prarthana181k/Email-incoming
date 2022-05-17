@@ -29,7 +29,7 @@ public class EmailDemoApplication{
 //    	email.newInstance().userId("bf03eeb7-b951-4a42-8eb4-0c2ca31bbb53").DownaloadPath(null);
 //    	//email.conhub("bf03eeb7-b951-4a42-8eb4-0c2ca31bbb53","2022-05-13T05:49:00Z");
 //    	System.out.println(OffsetDateTime.parse("2022-05-11T00:00:00Z"));
-    	EmailRequest.newInstance().userId("bf03eeb7-b951-4a42-8eb4-0c2ca31bbb53").responseRequired(true)
+    	EmailRequest.newInstance().userId("bf03eeb7-b951-4a42-8eb4-0c2ca31bbb53").startDate(OffsetDateTime.parse("2022-05-11T00:00:00Z")).endDate(OffsetDateTime.parse("2022-05-12T00:00:00Z")).responseRequired(true)
     	.get()
     	.forEach(mail->{System.out.println(mail.subject);System.out.println(mail.date);});;
     	
