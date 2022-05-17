@@ -1,6 +1,5 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 17
-Implementation-Title: email-demo
-Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: DELL
+Build-Jdk: 17.0.2
 Created-By: Maven Integration for Eclipse
 

@@ -63,7 +63,7 @@ public class EmailService2 {
 		List<Email> mailList= new ArrayList<>();
 
 		MessageCollectionRequest builder=userRequestBuilder.mailFolders("Inbox").messages().buildRequest(requestOptions).expand("attachments");
-		System.out.println("receivedDateTime ge "+request.getStartDate()+" && "+"receivedDateTime le "+request.getEndDate());
+		//System.out.println("receivedDateTime ge "+request.getStartDate()+" AND "+"receivedDateTime le "+request.getEndDate());
 		Optional.ofNullable(request.getStartDate() != null ? request.getEndDate() != null ?"receivedDateTime ge "+request.getStartDate()+" AND "+"receivedDateTime le "+request.getEndDate() :"receivedDateTime ge "+request.getStartDate() : request.getEndDate() != null ?"receivedDateTime le "+request.getEndDate():null)
                 .map(date->builder.filter(date));
 //		Optional.ofNullable(request.getStartDate()).map(date->builder.filter("receivedDateTime ge "+date));
